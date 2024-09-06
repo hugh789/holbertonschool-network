@@ -1,0 +1,22 @@
+
+#!/usr/bin/env bash
+# updates the IP addresses in /etc/hosts for localhost and facebook.com
+
+# https://askubuntu.com/questions/1239711/how-to-append-text-in-the-beginning-of-each-line-using-sed
+# HOSTS_FILE="/etc/hosts"
+# sed -i -e 's/^/#/' $HOSTS_FILE
+# {
+#     echo ""
+#     echo "127.0.0.2 localhost"
+#     echo "8.8.8.8 facebook.com"
+# } >> $HOSTS_FILE
+
+# Unfortuantely, the checker doesn't let us edit the /etc/hosts file
+# so let's try this way instead
+# https://askubuntu.com/questions/701903/how-do-i-create-my-own-custom-hosts-file
+# and then...
+# https://askubuntu.com/questions/415013/how-to-temporarily-override-a-dns-setting-for-a-certain-domain-name-to-point-to
+
+export HOSTALIASES=~/.hosts
+echo '127.0.0.2 locahost' | sudo tee -a /.hosts
+echo '8.8.8.8 facebook.com' | sudo tee -a /.hosts

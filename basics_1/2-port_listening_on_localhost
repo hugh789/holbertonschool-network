@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Listens to the specified port
+
+# Run the following commands to install necessary stuff:
+# apt install -y netcat
+# apt install telnet
+
+nc -l 98
