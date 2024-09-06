@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 # updates the IP addresses in /etc/hosts for localhost and facebook.com
 
